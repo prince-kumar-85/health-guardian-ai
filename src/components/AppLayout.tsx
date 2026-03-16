@@ -59,6 +59,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
             <span className="hidden rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground md:inline-block">
               {roleLabel}
             </span>
+            <NotificationBell />
             <Button variant="ghost" size="icon" onClick={handleSignOut} title="Sign out">
               <LogOut className="h-4 w-4" />
             </Button>
