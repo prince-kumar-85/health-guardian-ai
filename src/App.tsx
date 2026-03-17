@@ -33,6 +33,7 @@ const App = () => (
 
             <Route element={<ProtectedRoute />}>
               <Route path="/" element={<Index />} />
+              <Route path="/disease-map" element={<DiseaseMapPage />} />
             </Route>
 
             <Route element={<ProtectedRoute allowedRoles={['citizen']} />}>
