@@ -303,13 +303,10 @@ const DiseaseMapPage = () => {
         </div>
 
         {/* Charts Section */}
-        <AnimatePresence>
           {(diseaseData.length > 0 || locationBreakdown.length > 0) && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
+            <div
               className="grid gap-6 lg:grid-cols-2"
+            >
             >
               {diseaseData.length > 0 && (
                 <Card>
