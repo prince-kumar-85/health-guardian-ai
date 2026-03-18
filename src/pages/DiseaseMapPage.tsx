@@ -173,7 +173,6 @@ const DiseaseMapPage = () => {
                         const stateName = geo.properties.st_nm || geo.properties.NAME_1 || geo.properties.name || geo.properties.ST_NM || '';
                         const count = getCountForGeo(stateName);
                         const isSelected = selectedState?.toLowerCase() === stateName.toLowerCase();
-                        const isHovered = hoveredState === stateName;
 
                         return (
                           <Geography
