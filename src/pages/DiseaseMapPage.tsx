@@ -10,7 +10,7 @@ import { MapPin, ArrowLeft, Activity, AlertTriangle, BarChart3 } from 'lucide-re
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell, PieChart, Pie } from 'recharts';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
-const INDIA_TOPO_URL = 'https://cdn.jsdelivr.net/npm/india-topojson@1.0.0/india.json';
+const INDIA_TOPO_URL = '/india-topo.json';
 
 const CHART_COLORS = [
   'hsl(199, 89%, 38%)', 'hsl(168, 65%, 42%)', 'hsl(38, 92%, 50%)',
@@ -170,7 +170,7 @@ const DiseaseMapPage = () => {
                   <Geographies geography={INDIA_TOPO_URL}>
                     {({ geographies }) =>
                       geographies.map((geo) => {
-                        const stateName = geo.properties.NAME_1 || geo.properties.name || geo.properties.ST_NM || '';
+                        const stateName = geo.properties.st_nm || geo.properties.NAME_1 || geo.properties.name || geo.properties.ST_NM || '';
                         const count = getCountForGeo(stateName);
                         const isSelected = selectedState?.toLowerCase() === stateName.toLowerCase();
                         const isHovered = hoveredState === stateName;
