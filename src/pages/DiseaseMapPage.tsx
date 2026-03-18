@@ -162,6 +162,15 @@ const DiseaseMapPage = () => {
                 >
                   <p className="font-semibold text-foreground">{hoveredState}</p>
                   <p className="text-muted-foreground">{getCountForGeo(hoveredState)} cases reported</p>
+                  {getAlertsForGeo(hoveredState).length > 0 && (
+                    <div className="mt-1 border-t pt-1">
+                      {getAlertsForGeo(hoveredState).map(a => (
+                        <p key={a.id} className="text-xs text-destructive font-medium">
+                          ⚠ {a.disease}: {a.case_count} cases ({a.alert_level})
+                        </p>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
               <ComposableMap
